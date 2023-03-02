@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const services_1 = require("../services/");
+const services_1 = require("../services");
 const login = ((req, res) => {
     const { username, password } = req.body;
     if (username === "admin" && password === "admin") {
@@ -12,11 +12,6 @@ const login = ((req, res) => {
         .status(401)
         .json({ message: "The username and password your provided are invalid" });
 });
-const dummy = ((req, res) => {
-    return res
-        .json({ message: "dummy" });
-});
 exports.default = {
-    login,
-    dummy
+    login
 };
